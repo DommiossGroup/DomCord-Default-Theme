@@ -1,17 +1,13 @@
 # DOMCORD - Configuration file | Please do not edit something here---
 name: Default
 full_name: theme.default.domcord
-author: FunoxPanda
+author: DomCord
 description: "Default DomCord's theme"
 version: v1.0
-ownheader: 'false'
-ownfooter: 'false'
+ownheader: 'true'
+ownfooter: 'true'
 Personnalisation:
     background_img: https://i.imgur.com/00TQdeu.png
     text_image_color: light
     fontawesome: 'true'
     theme_color: dark
-Discord:
-    discord_server_id: null
-    discord_widget: null
-    discord_invitation_url: null

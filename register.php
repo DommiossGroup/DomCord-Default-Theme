@@ -1,152 +1,47 @@
 <?php
 
-$pagetitle = "Sign up";
+const pageTitle = Lang::btn_register;
+
+include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php");
 include("controller/registration.php");
 
 ?>
-    <style>
+<div class="container">
 
-.mt-100 {
-    margin-top: 100px
-}
+    <div class="row ">
 
-.card {
-    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
-    border-width: 0;
-    transition: all .2s
-}
+        <?php if (isset($error)) {
+            echo $error;
+        } ?>
+        <div class="card mb-3">
+            <div class="card-body py-3">
+                <div class="row no-gutters align-items-center">
+                    <form method="POST">
 
-.card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
-}
+                        <label>Nametag</label>
+                        <input type="text" class="form-control" name="nametag"><br>
+                        <label>Emaim</label>
 
-.card-header {
-    display: flex;
-    align-items: center;
-    border-bottom-width: 1px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: .625rem;
-    height: 3.5rem;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(26, 54, 126, 0.125)
-}
+                        <input type="email" class="form-control" name="mail"><br>
 
-.card-body {
-    flex: 1 1 auto;
-    padding: 1.25rem
-}
+                        <label><?php echo Lang::account_password; ?></label>
+                        <input type="password" class="form-control" name="pass"><br>
 
-.flex-truncate {
-    min-width: 0 !important
-}
-
-.d-block {
-    display: block !important
-}
-
-a {
-    color: #E91E63;
-    text-decoration: none !important;
-    background-color: transparent
-}
-
-.media img {
-    width: 40px;
-    height: auto
-}
-</style>
+                        <label>pass confirmation </label>
+                        <input type="password" class="form-control" name="passVerify"><br>
 
 
-    <body id="page-top">
-        <!-- Navigation-->
-        <!-- Header-->
-        <header class="text-white" style="background-image: url('<?php echo $_ThemeOption_['Personnalisation']['background_img']; ?>'); background-size: cover;"> 
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder <?php echo "text-".$_ThemeOption_['Personnalisation']['text_image_color'].""; ?>"><?php echo $pagetitle; ?></h1>
-            </div>
-        </header>
-        <!-- Services section--><?php if($_maintenance_['status'] == "true"){ ?><div class="alert alert-danger"><strong><i class="fas fa-exclamation-circle"></i></strong> Your website is actually under maintenance. Only ranks with "SUPERADMIN" permission can access to the website.</div><?php } ?>
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-
-
-                    <div class="col-md-12" >
-
-
-                        <div id="register" class="card mb-3 <?php echo "text-".$_ThemeOption_['Personnalisation']['text_image_color'].""; ?>" style="background-image: url('<?php echo $_ThemeOption_['Personnalisation']['background_img']; ?>'); background-size: cover;">
-                            <div class="card-header pr-0 pl-0" style="background-image: url('<?php echo $_ThemeOption_['Personnalisation']['background_img']; ?>'); background-size: cover;">
-                                <div class="row no-gutters align-items-center w-100">
-                                    <div class="col font-weight-bold pl-3"><a href="#register" class="<?php echo "text-".$_ThemeOption_['Personnalisation']['text_image_color'].""; ?>"><b>CREATE AN ACCOUNT</b></a></div>
-                                </div>
-                            </div>
+                        <hr class="m-0"><br>
+                        <div class="d-grid gap-2">
+                            <input type="submit" class="btn btn-primary" name="create_account" value="Create my account">
                         </div>
-                        <?php if(isset($error)){ echo $error; } ?>
-                        <div class="card mb-3">
-                            <div class="card-body py-3">
-                                <div class="row no-gutters align-items-center">
-                                    <form method="POST">
-                                    <div class="input-group mb-3">
-                                      <span class="input-group-text" id="basic-addon1">Username <b class="text-danger">*</b></span>
-                                      <input type="text" class="form-control" name="nametag">
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                      <span class="input-group-text" id="basic-addon1">Email adress <b class="text-danger">*</b></span>
-                                      <input type="email" class="form-control" name="mail">
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                      <span class="input-group-text" id="basic-addon1">Password <b class="text-danger">*</b></span>
-                                      <input type="password" class="form-control" name="pass">
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                      <span class="input-group-text" id="basic-addon1">Confirm Password <b class="text-danger">*</b></span>
-                                      <input type="password" class="form-control" name="passVerify">
-                                    </div>
-                                   
-                                    <p><i class="fas fa-info-circle text-info"></i> Fields marked with a <b class="text-danger">*</b> are required.</p>
-                                    <p><i class="fas fa-exclamation-triangle text-warning"></i> By registering you agree to the terms of services and privacy policies of <?php echo $_Config_['General']['name']; ?>'s forum.</p>
-                                <hr class="m-0"><br>
-                                <div class="d-grid gap-2">
-                                    <input type="submit" class="btn btn-outline-dark" name="create_account" value="Create my account">
-                                </div>
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
+                <a href="?page=login"><?php echo Lang::already_account; ?></a>
             </div>
-        </section>
+        </div>
 
-        <?php if($_Config_['developper_mod'] == "true"){ ?>
-        <section id="developper_mod_theme">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>About this theme</h2>
-                        <p class="lead">Everyone can create a theme. These are this theme informations:</p>
-                        <ul>
-                            <li>Author: <b><?php echo $_ThemeOption_['author']; ?></b></li>
-                            <li>Theme version: <b><?php echo $_ThemeOption_['version']; ?></b></li>
-                            <li>Theme description: <b><?php echo $_ThemeOption_['version']; ?></b></li>
-                            <li>Full name: <b><?php echo $_ThemeOption_['full_name']; ?></b></li>
-                            <li>Showable name: <b><?php echo $_ThemeOption_['name']; ?></b></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
+</div>
 
-        <?php } ?>
-
-        <!-- Footer-->
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+<?php include("themes/" . $_Config_['General']['theme'] . "/assets/includes/footer.php"); ?>
