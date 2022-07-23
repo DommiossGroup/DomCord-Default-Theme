@@ -6,5 +6,5 @@
 🎨 Name: default
 👨 Author: FunoxPanda
 
-🥭 Version: v1.0
-🥔 Made for the version SNAPSHOT V0.7 of DomCord
+🥭 Version: v1.0.0
+🥔 Made for the version SNAPSHOT V1.0 of DomCord
