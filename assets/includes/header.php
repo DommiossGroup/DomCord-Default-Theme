@@ -101,7 +101,7 @@
                 <h1 class="header-title animate-pop-in"><?php if (isset($page) AND $page == "home") {
                                                             echo $_Config_['General']['description'];
                                                         } ?></h1>
-                <?php if (!isset($_SESSION['id']) AND isset($page) AND $page == "home") { ?><a class="btn btn-light btn-sm animate-pop-in" href="?page=register"><i class="fas fa-key"></i> Join Us</a><?php } ?>
+                <?php if (!isset($_SESSION['id']) AND isset($page) AND $page == "home") { ?><a class="btn btn-light btn-sm animate-pop-in" href="?page=register"><i class="fas fa-key"></i> <?php echo Lang::footer_joinus; ?></a><?php } ?>
             </div>
         </section>
     </header>
