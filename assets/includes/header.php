@@ -43,23 +43,23 @@
                         <div class="d-flex">
                             <?php if (!isset($_SESSION['id'])) { ?>
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
+                                    <li class="nav-item ps-2">
                                         <a class="btn btn-primary btn-sm" href="?page=login"><i class="fas fa-key"></i> <?php echo Lang::navbar_signin; ?></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item ps-2">
                                         <a class="btn btn-light btn-sm" href="?page=register"><i class="fas fa-key"></i> <?php echo Lang::navbar_signup; ?></a>
                                     </li>
                                 </ul>
                             <?php } else { ?>
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
+                                    <li class="nav-item ps-2">
                                         <a class="btn btn-warning btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#notifmodal"><i class="far fa-bell"></i> Notifications</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item ps-2">
                                         <a class="btn btn-primary btn-sm" href="?page=account"><i class="fas fa-users"></i> <?php echo Lang::title_account; ?></a>
                                     </li>
                                     <?php if (isset($userrank) and $userrank['ADMIN_PANELACCESS'] == "on") { ?>
-                                        <li class="nav-item">
+                                        <li class="nav-item ps-2">
                                             <a class="btn btn-danger btn-sm" href="./Administration"><i class="fas fa-cog"></i> <?php echo Lang::navbar_admin; ?></a>
                                         </li>
                                     <?php } ?>
