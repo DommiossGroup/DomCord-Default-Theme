@@ -18,22 +18,22 @@ include("controller/registration.php");
                 <div class="row no-gutters align-items-center">
                     <form method="POST">
 
-                        <label>Nametag</label>
+                        <label><?php echo Lang::profile_nametag; ?></label>
                         <input type="text" class="form-control" name="nametag"><br>
-                        <label>Emaim</label>
 
+                        <label><?php echo Lang::account_email; ?></label>
                         <input type="email" class="form-control" name="mail"><br>
 
                         <label><?php echo Lang::account_password; ?></label>
                         <input type="password" class="form-control" name="pass"><br>
 
-                        <label>pass confirmation </label>
+                        <label><?php echo Lang::signup_confimpass; ?> </label>
                         <input type="password" class="form-control" name="passVerify"><br>
 
 
                         <hr class="m-0"><br>
                         <div class="d-grid gap-2">
-                            <input type="submit" class="btn btn-primary" name="create_account" value="Create my account">
+                            <input type="submit" class="btn btn-primary" name="create_account" value="<?php echo Lang::btn_register; ?>">
                         </div>
                     </form>
                 </div>

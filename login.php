@@ -27,7 +27,7 @@ include("controller/login.php");
 
                         <hr class="m-0"><br>
                         <div class="d-grid gap-2">
-                            <input type="submit" class="btn btn-primary" name="connexion" value="Login to my account">
+                            <input type="submit" class="btn btn-primary" name="connexion" value="<?php echo Lang::btn_login; ?>">
                         </div>
                     </form>
                 </div>
