@@ -35,7 +35,7 @@ include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php
                     <?php while ($cat = $listpinnedmessage->fetch()) { ?>
 
                         <?php
-                        if ($permission_see_levelhere < $userrank['PERMISSION_LEVEL']) {
+                        if ($userrank['PERMISSION_LEVEL'] >= $permission_see_levelhere) {
 
                             if ($cat['PINNED'] == "on") {
 
@@ -107,7 +107,7 @@ include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php
                     <?php while ($cat = $listcategory->fetch()) { ?>
 
                         <?php
-                        if ($permission_see_levelhere < $userrank['PERMISSION_LEVEL']) {
+                        if ($userrank['PERMISSION_LEVEL'] >= $permission_see_levelhere) {
 
                             $sfm = $bdd->prepare("SELECT * FROM " . $_Config_['Database']['table_prefix'] . "_messages WHERE TOPIC_ID = ?");
                             $sfm->execute(array($cat['id']));
