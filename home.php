@@ -16,7 +16,7 @@ if (!(isset($_SESSION['id']))) $userrank['PERMISSION_LEVEL'] = 1;
 
         <?php if ($_maintenance_['status'] == "true") { ?>
             <div class="alert alert-danger text-center">
-                <strong><i class="fas fa-exclamation-circle"></i></strong> Your website is currently under maintenance. Only ranks with "SUPERADMIN" permission can access to the website.
+                <strong><i class="fas fa-exclamation-circle"></i></strong> <?php echo Lang::maintenance_superadmin; ?>
             </div>
         <?php } ?>
 
