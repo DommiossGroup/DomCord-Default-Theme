@@ -19,7 +19,7 @@ include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php
 
 
         <?php if (isset($_SESSION['id'])) { ?>
-            <?php if (isset($permission_write_levelhere) and isset($userrank['PERMISSION_LEVEL']) and $permission_write_levelhere < $userrank['PERMISSION_LEVEL']) { ?>
+            <?php if (isset($permission_write_levelhere) and isset($userrank['PERMISSION_LEVEL']) and $userrank['PERMISSION_LEVEL'] >= $permission_write_levelhere) { ?>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#postmodal" class="btn btn-<?php echo $_ThemeOption_['Personnalisation']['theme_color']; ?>"><i class="far fa-plus-square"></i> Create a topic</button>
                 <div class="separator"></div>
             <?php } ?>
@@ -170,35 +170,39 @@ include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php
     </div>
 </div>
 
-<div class="modal fade" id="postmodal" tabindex="-1" aria-labelledby="postmodal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create a topic</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+<?php if (isset($_SESSION['id'])) { ?>
+    <?php if (isset($permission_write_levelhere) and isset($userrank['PERMISSION_LEVEL']) and $userrank['PERMISSION_LEVEL'] >= $permission_write_levelhere) { ?>
+        <div class="modal fade" id="postmodal" tabindex="-1" aria-labelledby="postmodal" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create a topic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 
 
-                <?php if (isset($error)) {
-                    echo $error;
-                } ?>
-                <form method="POST">
-                    <label>Topic name</label>
-                    <input class="form-control" type="text" name="name"><br>
-                    <label>Topic content</label>
-                    <textarea id="editor1" name="content"></textarea>
-                    <script>
-                        CKEDITOR.replace('editor1');
-                    </script>
+                        <?php if (isset($error)) {
+                            echo $error;
+                        } ?>
+                        <form method="POST">
+                            <label>Topic name</label>
+                            <input class="form-control" type="text" name="name"><br>
+                            <label>Topic content</label>
+                            <textarea id="editor1" name="content"></textarea>
+                            <script>
+                                CKEDITOR.replace('editor1');
+                            </script>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="post_topic" class="btn btn-<?php echo $_ThemeOption_['Personnalisation']['theme_color']; ?>">Create a topic</button>
+                    </div>
+                    </form>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" name="post_topic" class="btn btn-<?php echo $_ThemeOption_['Personnalisation']['theme_color']; ?>">Create a topic</button>
-            </div>
-            </form>
         </div>
-    </div>
-</div>
+<?php }
+} ?>
 
 <?php include("themes/" . $_Config_['General']['theme'] . "/assets/includes/footer.php"); ?>
