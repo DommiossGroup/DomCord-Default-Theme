@@ -21,7 +21,7 @@ if (!(isset($_SESSION['id']))) $userrank['PERMISSION_LEVEL'] = 1;
         <?php } ?>
 
         <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
-            <b><i class="far fa-bell"></i></b> Do you like our forum? Do not hesitate to register !<br>Thank you !
+            <b><i class="far fa-bell"></i></b> <?php echo Lang::pub_alert.'<br>'.Lang::thank_you; ?> !
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>

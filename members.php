@@ -23,7 +23,7 @@ include("controller/members.php");
             <div class="card mb-3">
                 <div class="card-body py-3">
                     <div class="row ">
-                        <div class="col-4">
+                        <div class="col-xs-12 col-md-4 pb-2">
                             <div class="d-grid gap-2">
                                 <a href="?page=members" class="btn btn<?php if ($page !== "user") {
                                                                             echo '-outline';
@@ -33,7 +33,7 @@ include("controller/members.php");
                                                                                     } ?>-primary">Staff List</a>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-xs-12 col-md-8 pb-2">
                             <?php if ($page == "user") { ?>
                                 <table class="table table-striped">
                                     <thead>

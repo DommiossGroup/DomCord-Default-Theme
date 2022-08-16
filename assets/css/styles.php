@@ -81,13 +81,19 @@ transform: none;
 
 .header-title {
 animation-delay: 1s;
-font-size: 2.5em;
+font-size: 200%;
+line-height: normal;
+margin: 10px auto 15px;
+}
+.sub-title {
+animation-delay: 1s;
+font-size: 150%;
 line-height: normal;
 margin: 10px auto 15px;
 }
 
 .center-absolute {
-width: 40%;
+width: 100%;
 position: absolute;
 left: 50%;
 z-index: 999;

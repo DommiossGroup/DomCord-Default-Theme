@@ -131,7 +131,7 @@ include("themes/" . $_Config_['General']['theme'] . "/assets/includes/header.php
                                                                                                                                                                 echo "<i class='fas fa-thumbtack text-danger'></i> ";
                                                                                                                                                             } ?>
 
-                                        <?php if ($badgerc > 0) {
+                                        <?php if (isset($badgerc) && $badgerc > 0) {
                                             while ($bi = $badge->fetch()) {
 
                                                 echo '<span class="' . $bi['SPAN'] . '">' . $bi['NAME'] . '</span>';

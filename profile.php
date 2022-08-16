@@ -20,7 +20,7 @@ $recentNb = $recent->rowCount();
     <?php } ?>
 
     <div class="row ">
-        <div class="col-4">
+        <div class="col-xs-12 col-md-4 pb-2">
             <div class="card mb-3">
                 <div class="card-body py-3">
                     <div class="d-grid gap-2">
@@ -81,7 +81,7 @@ $recentNb = $recent->rowCount();
                 </div>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-xs-12 col-md-8 pb-2">
             <div class="card mb-3">
                 <div class="card-body py-3">
                     <div class="row">

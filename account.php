@@ -25,7 +25,7 @@ if (isset($_GET['subpage'])) {
                 echo $error;
             } ?>
             <div class="row ">
-                <div class="col-4">
+                <div class="col-xs-12 pb-2 col-md-4">
                     <div class="d-grid gap-2">
 
                         <a href="?page=account" class="btn btn<?php if ($subpage !== "home") {
@@ -42,7 +42,7 @@ if (isset($_GET['subpage'])) {
                                                                                 } ?>-primary">Signature</a>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-xs-12 pb-2 col-md-8">
                     <?php if ($subpage == "home") { ?>
                         <div class="d-grid gap-2">
                             <div class="d-flex flex-column align-items-center text-center">
